@@ -1,6 +1,6 @@
 # System Architecture & Technical Documentation
 
-## 1. 🏗 System Overview
+## 1. System Overview
 
 The **Real-time Data Aggregation Service** is a high-throughput middleware layer designed to bridge the gap between public Decentralized Exchange (DEX) APIs and frontend clients.
 
@@ -74,19 +74,21 @@ Designed for live, low-latency price updates.
 
 ### High-Level Architecture
 
-```mermaid
-[DexScreener API] <──┐
-                     │ (HTTP GET / 20s)
-                     ▼
-            [Aggregation Service]
-           │   1. Fetch & Normalize  │
-           │   2. Merge Duplicates   │
-           │   3. Cache (TTL 30s)    │
-           └─────────┬───────────────┘
-                     │
-          ┌──────────┴──────────┐
-          ▼                     ▼
-    [REST API]             [WebSocket Server]
-    (Pull Data)            (Push Data)
-          │                     │
-    [Frontend App]        [Frontend App]
+graph TD
+    DexS[DexScreener API]
+    Gecko[GeckoTerminal API]
+    Aggregator[Aggregation Service]
+    Cache[(In-Memory Cache)]
+    REST[REST API]
+    WS[WebSocket Server]
+    Frontend[Frontend App]
+
+    DexS -- "HTTP GET (20s)" --> Aggregator
+    Gecko -- "HTTP GET (20s)" --> Aggregator
+    Aggregator -- "1. Normalize & Merge" --> Cache
+    
+    Cache -- "Read Data" --> REST
+    Cache -- "Read Data" --> WS
+    
+    REST -- "Pull Data" --> Frontend
+    WS -- "Push Data" --> Frontend
