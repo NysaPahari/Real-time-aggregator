@@ -10,8 +10,7 @@ This project was built to demonstrate scalable architecture patterns including *
 
 | Resource | URL |
 | :--- | :--- |
-| **Live Demo** | [INSERT YOUR RENDER/RAILWAY URL HERE] |
-| **Video Walkthrough** | [INSERT YOUR YOUTUBE LINK HERE] |
+| **Live Demo** | https://real-time-aggregator-qrj1.onrender.com/ |
 | **Design Documentation** | [View Design Decisions & Architecture](./Documentation.md) |
 
 ---
