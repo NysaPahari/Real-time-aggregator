@@ -28,7 +28,9 @@ const redis = {
 };
 
 redis.on('error', (err) => {
-  console.error('[Redis] Connection Error:', err.message);
+  // --- FIX IS HERE: Check if err exists before accessing .message ---
+  const msg = err ? err.message : 'Unknown error'; 
+  console.error('[Redis] Connection Error:', msg);
   console.log(
     '[Redis] This is normal in mock mode. Caching will be disabled.'
   );
