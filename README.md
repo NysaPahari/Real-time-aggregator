@@ -12,7 +12,7 @@ This project was built to demonstrate scalable architecture patterns including *
 | :--- | :--- |
 | **Live Demo** | [INSERT YOUR RENDER/RAILWAY URL HERE] |
 | **Video Walkthrough** | [INSERT YOUR YOUTUBE LINK HERE] |
-| **Design Documentation** | [View Design Decisions & Architecture](./DOCUMENTATION.md) |
+| **Design Documentation** | [View Design Decisions & Architecture](./Documentation.md) |
 
 ---
 
@@ -48,6 +48,6 @@ Ensure you have **Node.js** and **npm** installed on your machine.
 Clone the repository and install dependencies:
 
 ```bash
-git clone [https://github.com/NysaPahari/real-time-aggregator.git](https://github.com/NysaPahari/real-time-aggregator.git)
+git clone https://github.com/NysaPahari/Real-time-aggregator.git
 cd real-time-aggregator
 npm install
