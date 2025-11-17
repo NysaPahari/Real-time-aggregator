@@ -72,8 +72,9 @@ Designed for live, low-latency price updates.
 3.  **Type Safety:** The codebase is written in strict TypeScript, ensuring that missing fields or malformed API responses are caught at compile time or gracefully handled during normalization.
 
 
-### High-Level Architecture
+## High-Level Architecture
 
+```mermaid
 graph TD
     DexS[DexScreener API]
     Gecko[GeckoTerminal API]
